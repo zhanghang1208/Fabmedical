@@ -1,0 +1,37 @@
+apiVersion: batch/v1 
+kind: Job 
+metadata:   
+  name: init  
+  labels:     
+    app: init
+spec:   
+  template:     
+    metadata:       
+      name: init       
+      labels:         
+        app: init    
+    spec:       
+      containers:
+      - name: init
+        image: fabmedicalpim.azurecr.cn/content-init
+        ports:
+        - containerPort: 3002
+          hostPort: 3002
+          protocol: TCP
+        env:
+        - name: MYSQL_USER
+          valueFrom:
+            secretKeyRef:
+             name: mysql-user
+             key: MYSQL_USER
+        - name: MYSQL_PWD
+          valueFrom:
+            secretKeyRef:
+             name: mysql-password
+             key: MYSQL_PWD
+        - name: MYSQL_HOST
+          valueFrom:
+            secretKeyRef:
+             name: mysql-host
+             key: MYSQL_HOST
+      restartPolicy: OnFailure
