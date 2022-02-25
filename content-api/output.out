@@ -92,3 +92,6 @@ java.lang.IllegalArgumentException: Invalid character found in method name. HTTP
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.31.jar!/:9.0.31]
 	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_292]
 
+2022-02-25 02:07:05.705  INFO 20687 --- [extShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-02-25 02:07:05.706  INFO 20687 --- [extShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-02-25 02:07:05.716  INFO 20687 --- [extShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
